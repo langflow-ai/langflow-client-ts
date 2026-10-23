@@ -83,11 +83,11 @@ export class LangflowClient {
   }
 
   #resolveBaseUrl(opts: LangflowClientOptions) {
-    // If baseUrl is provided as an property on the opts, but is it undefined or
+    // If baseUrl is provided as a property on the opts, but it is undefined or
     // null, this is likely not the intention.
     // Previously the baseUrl would get set to the DATASTAX_LANGFLOW_BASE_URL
     // and the instantiation would fail due to a missing langflowId. Now it will
-    // throw an more useful error, unless langflowId and apiKey are present.
+    // throw a more useful error, unless langflowId and apiKey are present.
     if (Object.hasOwn(opts, "baseUrl")) {
       const isBaseUrlEffectivelyEmpty =
         typeof opts.baseUrl === "undefined" ||
